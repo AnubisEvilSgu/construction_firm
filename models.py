@@ -11,7 +11,7 @@ class User:
 
     def login(self, email: str, password: str) -> bool:
         if self.email == email and self.password == password:
-            print("Поздравляем, авторизация прошла успешна!")
+            print("Поздравляем, авторизация успешна!") #Изменено 
             return True
         print("Неправильный email или пароль!")
         return False
