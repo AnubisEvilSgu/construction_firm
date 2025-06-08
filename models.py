@@ -39,6 +39,9 @@ class Client(User):
         self.reviews = []
 
     def createRequest(self, serviceType: str, details: str):
+        if not details or not details.strip():
+            print("Ошибка: Описание заявки обязательно для заполнения!")
+            return None
         request_id = len(self.requests) + 1  # Локальный id заявки
         new_request = Request(request_id, self, serviceType, details)
         self.requests.append(new_request)
